@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Para Yasmin Beh</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #ffdde1, #ee9ca7);
+      color: #fff;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      height: 100vh;
+      position: relative;
+    }
+    h1 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+    h2 {
+      font-size: 1.5em;
+      margin-top: 30px;
+    }
+    p {
+      font-size: 1.2em;
+      margin: 0 20px 20px;
+    }
+    button {
+      background: #fff;
+      color: #ee9ca7;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #ffd1dc;
+    }
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      transform: rotate(45deg);
+      animation: float 8s linear infinite;
+    }
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 50%;
+    }
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) rotate(45deg);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(-10vh) rotate(45deg);
+        opacity: 1;
+      }
+    }
+    .music {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Oi, Yasmin Beh</h1>
+  <p>Desde que te conheci, minha vida ficou mais bonita.<br>
+  Você é o meu sorriso favorito, o meu lugar seguro, o meu amor.</p>
+  <p>Cada dia ao seu lado é um presente, e meu coração só quer saber de você.</p>
+
+  <h2>Agora... a pergunta mais importante:</h2>
+
+  <h1 style="font-size: 2.2em; margin: 20px 0;">Yasmin Beh,</h1>
+  <h1 style="font-size: 2.5em; color: #fff7f9;">Quer namorar comigo?</h1>
+
+  <button onclick="alert('Eu sabia que você diria sim! Te amo!')">Sim!</button>
+
+  <div class="music">
+    <iframe width="0" height="0" src="https://www.youtube.com/embed/2Vv-BfVoq4g?autoplay=1&loop=1&playlist=2Vv-BfVoq4g" frameborder="0" allow="autoplay"></iframe>
+  </div>
+
+  <script>
+    for (let i = 0; i < 30; i++) {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (Math.random() * 5 + 5) + 's';
+      heart.style.opacity = Math.random();
+      document.body.appendChild(heart);
+    }
+  </script>
+</body>
+</html>
